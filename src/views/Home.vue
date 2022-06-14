@@ -21,5 +21,8 @@ export default {
 </script>
 
 <style scoped>
+/*** elements ***/
+/*** ids ***/
+/*** classes ***/
 #Home { margin: 0px; padding: 0px;}
 </style>

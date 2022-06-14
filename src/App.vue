@@ -6,6 +6,10 @@
 </template>
 
 <style>
+/*** elements ***/
+body {margin: 0px; padding: 0px; overflow-y: hidden; background-color: black; }
+
+/*** ids ***/
 #App {
   margin: 0px;
   padding: 0px;
@@ -15,4 +19,6 @@
   text-align: center;
   color: #2c3e50;
 }
+
+/*** classes ***/
 </style>
