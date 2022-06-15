@@ -1,13 +1,14 @@
 <template>
   <div id="ComponentSidebar">
-    <!-- <h1>Total Categories: {{codexJSON.length}}</h1> -->
     <div v-for="category in codexJSON.slice().sort((a, b) => {return a.order - b.order})" v-bind:key="category.nr">
-      <!-- <div id="categoryTitle" v-on:click="selectCategory(category)">{{category.title}} ({{category.data.length}})</div> -->
-      <!-- <div id="categoryTitle" v-on:click="selectCategory(category)">{{category.title}} • {{category.data.length}}</div> -->
+      <!-- categories -->
       <div id="categoryTitle" v-on:click="selectCategory(category)">
         <span class="categoryTitle">{{category.title}}</span>
         <span class="categorySubcategoriesCount"> · {{category.data.length}}</span>
       </div>
+      
+      <!-- subcategories -->
+      <!-- <div class="" v-for="item in category.data" v-bind:key="item.nr"> · {{item.subcategory}}</div> -->
       <!-- <div id="categoryData" v-for="data in category.data" v-bind:key="data.nr">• {{data.subcategory}}</div> -->
     </div>
   </div>
@@ -15,8 +16,8 @@
 
 <script>
 import codexJSON from "../assets/codex.json";
-import {ref, reactive, computed, onUpdated, onMounted} from 'vue'
 import {useStore} from 'vuex'
+import {ref, reactive, computed, onUpdated, onMounted} from 'vue'
 import router from '../router'
 import { useRouter, useRoute } from 'vue-router' //instead of this.$route
 
@@ -31,7 +32,31 @@ export default {
     {
       console.log("selectCategory")
 
+      //vuex
       store.dispatch('actionSetSelectedCategoryData', category)  
+
+      subcategoriesExpandAll()
+    }
+
+    function subcategoriesExpandAll()
+    {
+        console.log("subcategoriesExpandAll")
+        
+        //elements
+        let subcategoryDataSections = document.getElementsByClassName("subcategoryDataSection")
+        let subcategoryData = document.getElementsByClassName("subcategoryData")
+
+        //subcategory sections
+        for(let subcategory in subcategoryDataSections)
+        {
+            if(subcategoryDataSections[subcategory].style != null) { subcategoryDataSections[subcategory].style.marginBottom = "40px"}
+        }
+
+        //subcategory data
+        for(let subcategory in subcategoryData)
+        {
+            if(subcategoryData[subcategory].style != null) { subcategoryData[subcategory].style.display = "block" }
+        }
     }
     
     return {
@@ -45,11 +70,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /*** elements ***/
+
 /*** ids ***/
-/*** classes ***/
 #categoryTitle { margin: 0px 20px 6px 10px; padding: 0px; text-align: left; font-weight: bold; font-size: 24px; user-select: none;}
 #ComponentSidebar 
 { 
@@ -67,5 +91,6 @@ export default {
   background-color: black;
 }
 
+/*** classes ***/
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
 </style>
