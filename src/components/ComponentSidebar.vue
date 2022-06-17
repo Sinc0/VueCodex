@@ -4,7 +4,7 @@
       <!-- categories -->
       <div id="categoryTitle" v-on:click="selectCategory(category)">
         <span class="categoryTitle">{{category.title}}</span>
-        <span class="categorySubcategoriesCount"> · {{category.data.length}}</span>
+        <span class="categorySubcategoriesCount"></span>
       </div>
       
       <!-- subcategories -->

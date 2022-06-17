@@ -184,7 +184,7 @@
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Ember.js", "value": "https://emberjs.com", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "NW.js (node-webkit)", "value": "https://nwjs.io", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Electron", "value": "https://www.electronjs.org", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Qt", "value": "https://www.qt.io", "images": "", "comment": "", "hidden": "true"},
+			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Qt", "value": "https://www.qt.io", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Ionic", "value": "https://ionicframework.com", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Kivy", "value": "https://kivy.org", "images": "", "comment": "Kivy\nOpen source Python library for rapid development of applications that make use of innovative user interfaces, such as multi-touch apps.", "hidden": "false"},
 			{"subcategory": "Cross-Platform Apps", "type": "link", "name": "Flutter","value": "https://flutter.dev", "images": "", "comment": "", "hidden": "false"},
@@ -210,13 +210,6 @@
 			{"subcategory": "Utility", "type": "link", "name": "Lodash", "value": "https://lodash.com", "images": "", "comment": "Lodash\nLodash is a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.", "hidden": "false"},
 			{"subcategory": "Utility", "type": "link", "name": "Hammer.js", "value": "https://hammerjs.github.io", "images": "", "comment": "Hammer\nAdd touch gestures to your webapp", "hidden": "false"},
 			{"subcategory": "Utility", "type": "link", "name": "GraphQL", "value": "https://graphql.org", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Sass", "value": "https://sass-lang.com/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Bootstrap", "value": "https://getbootstrap.com/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Milligram", "value": "https://milligram.io/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Skeleton", "value": "http://getskeleton.com/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Tailwind", "value": "https://tailwindcss.com/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Styling", "type": "link", "name": "Bulma", "value": "https://bulma.io/", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Frameworks", "type": "link", "name": "Node.js", "value": "https://nodejs.org", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Frameworks", "type": "link", "name": "Deno (JS, TS, Wasm)", "value": "https://deno.land", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Databases", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
@@ -232,11 +225,7 @@
 			{"subcategory": "Databases", "type": "link", "name": "Redis", "value": "https://redis.io", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Databases", "type": "link", "name": "FirebaseDB", "value": "https://firebase.google.com", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Databases", "type": "link", "name": "Fauna", "value": "https://fauna.com", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Server (Web Server Software)", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Server (Web Server Software)", "type": "link", "name": "IIS", "value": "https://www.iis.net", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Server (Web Server Software)", "type": "link", "name": "Apache", "value": "https://httpd.apache.org", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Server (Web Server Software)", "type": "link", "name": "Nginx", "value": "https://nginx.org/en", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Handlebars", "value": "https://handlebarsjs.com", "images": "", "comment": "Handlebars\nMinimal templating on steroids ", "hidden": "false"}
+			{"subcategory": "Unsorted", "type": "link", "name": "Express.js", "value": "https://handlebarsjs.com", "images": "", "comment": "Handlebars\nMinimal templating on steroids ", "hidden": "false"}
 		]
 	}
 ]

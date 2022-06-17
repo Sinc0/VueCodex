@@ -5,40 +5,48 @@
             <!-- category title -->
             <p id="selectedCategoryTitle">
                 <span>{{getSelectedCategoryData.title}}</span>
-                <span class="categorySubcategoriesCount" v-on:click="subcategoriesCollapseAll()"> · {{getSelectedCategoryData.data.length}}</span>
+                <span class="categorySubcategoriesCount" v-on:click="subcategoriesCollapseAll()"> · {{sortedSubcategories().length}}</span>
             </p>
+
+            <!-- category about -->
+            <div id="categoryAbout">{{getSelectedCategoryData.about}}</div>
+
+            <!-- subcategory search bar -->
+            <div id="searchBar">
+                <input id="searchBarInput" placeholder="filter subcategory..." v-on:keyup="searchSubcategoryData()" />
+            </div>
         </div>
         
         <!-- category data -->
         <div id="subcategoryData" v-if="getSelectedCategoryData">
-            <!-- category about -->
-            <div id="categoryAbout" v-if="getSelectedCategoryData.about">{{getSelectedCategoryData.about}}</div>
-
-            <!-- subcategory search bar -->
-            <div id="searchBar">
-                <input id="searchBarInput" placeholder="search subcategory..." v-on:keyup="searchSubcategoryData()" />
-            </div>
-
             <!-- subcategories -->
-            <div v-bind:id="'subcategoryDataSection#' + item.subcategory" class="subcategoryDataSection" v-for="item in sortedSubcategories()" v-bind:key="item.nr" v-on:click="subcategoryCollapse(item.subcategory)">
+            <div v-bind:id="'subcategoryDataSection#' + item.subcategory" class="subcategoryDataSection" v-for="item in sortedSubcategories()" v-bind:key="item.nr">
                 <!-- subcategory title -->
-                <div v-bind:id="'subcategoryTitle#' + item.subcategory" class="subcategoryTitle">
+                <div v-bind:id="'subcategoryTitle#' + item.subcategory" class="subcategoryTitle" v-on:click="subcategoryCollapse(item.subcategory)">
                     <b>{{item.subcategory}}</b>
                 </div>
                 
                 <!-- subcategory data -->
                 <div v-bind:id="'subcategoryData#' + item.subcategory" class="subcategoryData" style="display: block;">
-                    <div class="subcategoryDataItem" v-for="data in item.items" v-bind:key="data.nr" v-bind:title="data.comment">
+                    <div class="subcategoryDataItem" v-for="data in item.items.filter((data) => {return data.hidden == 'false'})" v-bind:key="data.nr" v-bind:title="data.comment">
+                        <div v-if="data.value != ''">
                         <!-- data type link -->
                         <span class="link" v-if="data.type == 'link'">
-                            <span> · </span><a v-bind:href="data.value" target="blank">{{data.value.replace("https://", "")}}</a>
+                            <span v-if="data.name"> · <a v-bind:href="data.value" target="blank">{{data.name}}</a></span>
+                            <span v-else> · <a v-bind:href="data.value" target="blank">{{data.value}}</a></span>
                         </span>
 
                         <!-- data type text -->
                         <span v-else-if="data.type == 'text'">{{data.value}}</span>
 
+                        <!-- data type bullet -->
+                        <span v-else-if="data.type == 'bullet'">
+                            <span> • </span><span>{{data.value}}</span>
+                        </span>
+
                         <!-- data comment -->
                         <!-- <span v-if="data.comment != ''"> · {{data.comment}}</span> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,11 +117,13 @@ export default {
             //variables
             let subcategories = getSelectedCategoryData.value.data
             let sortedSubcategories = []
-            let categoryExist = false
+            let categoryExist
 
             //sort subcategory names
             for(let sc in subcategories)
             {
+                categoryExist = false
+
                 for(let c in sortedSubcategories)
                 {
                     if(sortedSubcategories[c].subcategory == subcategories[sc].subcategory) { categoryExist = true }
@@ -194,9 +204,9 @@ export default {
     /* border-bottom: 2px solid black; */
     background-color: black;
 }
-#selectedCategoryTitle { margin: auto; padding: 0px; text-align: center; font-weight: bold; font-size: 24px;}
+#selectedCategoryTitle { margin: auto; padding: 0px 0px 16px 0px; text-align: center; font-weight: bold; font-size: 24px;}
 #subcategoryInfoMenu { margin: 0px 0px 0px 0px; padding: 0px;}
-#subcategoryData { margin: 62px 0px 0px 0px; padding: 0px;}
+#subcategoryData { position: relative; height: 89vh; margin: 160px 0px 0px 0px; padding: 0px; overflow-y: scroll; z-index: 0; border-bottom: 0px solid white;}
 #categoryTopInfo 
 { 
     position: absolute; 
@@ -206,17 +216,20 @@ export default {
     margin: auto; 
     padding: 20px 0px 0px 0px; 
     color: white;
+    z-index: 1;
     /* border-bottom: 1px solid black;  */
     background-color: black;
 }
-#categoryAbout { width: 100%; max-width: 440px; margin: auto; margin-bottom: 24px;}
+#categoryAbout { height: auto; width: 100%; max-width: 440px; margin: auto; word-break: none; white-space: nowrap; overflow-x: scroll;}
 #searchBarInput { width: 100%; font-size: 22px; color: lightgray; outline: none; border: 0px solid white; background-color: black;}
-#searchBar { width: 90%; margin: auto; margin-bottom: 24px; text-align: left;}
+#searchBar { width: 90%; margin: auto; margin-bottom: 24px; text-align: left; border-bottom: 2px solid white;}
 
 /*** classes ***/
 .subcategoryTitle { width: 100%; font-size: 20px; user-select: none; text-align: left; border-top: 0px solid black;}
 .subcategoryData { width: 100%; margin: auto; text-align: left;}
 .subcategoryDataSection { width: 90%; margin: auto; margin-bottom: 40px; text-align: left; font-size: 20px; border: 0px solid white;}
 .link a { text-decoration: none;}
+.link a:hover { color: white;}
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
+.subcategoryDataItem { opacity: 0.9;}
 </style>
