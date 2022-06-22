@@ -32,10 +32,14 @@ export default {
     {
       console.log("selectCategory")
 
+      let subcategoryData = document.getElementById("subcategoryData")
+      
       //vuex
       store.dispatch('actionSetSelectedCategoryData', category)  
 
       subcategoriesExpandAll()
+      
+      if(subcategoryData) { subcategoryData.scroll(0, 0) }
     }
 
     function subcategoriesExpandAll()

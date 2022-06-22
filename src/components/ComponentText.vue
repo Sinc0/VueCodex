@@ -30,22 +30,33 @@
                 <div v-bind:id="'subcategoryData#' + item.subcategory" class="subcategoryData" style="display: block;">
                     <div class="subcategoryDataItem" v-for="data in item.items.filter((data) => {return data.hidden == 'false'})" v-bind:key="data.nr" v-bind:title="data.comment">
                         <div v-if="data.value != ''">
-                        <!-- data type link -->
-                        <span class="link" v-if="data.type == 'link'">
-                            <span v-if="data.name"> · <a v-bind:href="data.value" target="blank">{{data.name}}</a></span>
-                            <span v-else> · <a v-bind:href="data.value" target="blank">{{data.value}}</a></span>
-                        </span>
+                            <!-- data type link -->
+                            <span class="link" v-if="data.type == 'link'">
+                                <span v-if="data.name"> · <a v-bind:href="data.value" target="blank">{{data.name}}</a></span>
+                                <span v-else> · <a v-bind:href="data.value" target="blank">{{data.value}}</a></span>
+                            </span>
 
-                        <!-- data type text -->
-                        <span v-else-if="data.type == 'text'">{{data.value}}</span>
+                            <!-- data type text -->
+                            <span v-else-if="data.type == 'text'">{{data.value}}</span>
 
-                        <!-- data type bullet -->
-                        <span v-else-if="data.type == 'bullet'">
-                            <span> • </span><span>{{data.value}}</span>
-                        </span>
+                            <!-- data type bullet -->
+                            <span v-else-if="data.type == 'bullet'">
+                                <span> · </span>
+                                <span>{{data.value}}</span>
+                            </span>
 
-                        <!-- data comment -->
-                        <!-- <span v-if="data.comment != ''"> · {{data.comment}}</span> -->
+                            <!-- data comment -->
+                            <!-- <span v-if="data.comment != ''"> · {{data.comment}}</span> -->
+
+                            <!-- data images -->
+                            <div class="subcategoryImgGallery" v-if="data.images">
+                                <span v-for="img in data.images.slice().sort((a, b) => {return a.order > b.order})" v-bind:key="img.nr">
+                                    <a v-bind:href="img.url" target="blank">
+                                        <img v-bind:id="'subcategoryImg#' + img.order" class="subcategoryDataImg" v-bind:src="img.url" v-bind:title="img.description"/>
+                                    </a>
+                                    <div class="subcategoryImgNumber">#{{img.order}}</div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +189,7 @@ export default {
             subcategoryCollapse,
             subcategoriesCollapseAll,
             sortedSubcategories,
-            searchSubcategoryData
+            searchSubcategoryData,
         }
     }
 }
@@ -206,7 +217,7 @@ export default {
 }
 #selectedCategoryTitle { margin: auto; padding: 0px 0px 16px 0px; text-align: center; font-weight: bold; font-size: 24px;}
 #subcategoryInfoMenu { margin: 0px 0px 0px 0px; padding: 0px;}
-#subcategoryData { position: relative; height: 89vh; margin: 160px 0px 0px 0px; padding: 0px; overflow-y: scroll; z-index: 0; border-bottom: 0px solid white;}
+#subcategoryData { position: relative; max-height: 89vh; margin: 160px 0px 0px 0px; padding: 0px; overflow-y: scroll; z-index: 0; border-bottom: 0px solid white;}
 #categoryTopInfo 
 { 
     position: absolute; 
@@ -231,5 +242,18 @@ export default {
 .link a { text-decoration: none;}
 .link a:hover { color: white;}
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
-.subcategoryDataItem { opacity: 0.9;}
+.subcategoryDataItem { opacity: 0.7;}
+.subcategoryDataImg { display: inline-block; max-height: 200px; min-height: 200px; margin: 0px 20px 10px 0px; user-select: none; border: 1px solid rgba(255, 255, 255, 0.3);}
+.subcategoryImgGallery 
+{ 
+    display: flex; 
+    width: 100%; 
+    margin: 10px 0px 0px 0px; 
+    overflow-x: scroll; 
+    text-align: center; 
+    scrollbar-color: white transparent; 
+    scrollbar-width: thin;
+    border-bottom: 1px solid white;
+}
+.subcategoryImgNumber { margin: 0px 0px 10px 0px;}
 </style>
