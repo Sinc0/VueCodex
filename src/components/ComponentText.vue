@@ -51,8 +51,8 @@
                             <!-- data images -->
                             <div class="subcategoryImgGallery" v-if="data.images">
                                 <span v-for="img in data.images.slice().sort((a, b) => {return a.order > b.order})" v-bind:key="img.nr">
-                                    <a v-bind:href="img.url" target="blank">
-                                        <img v-bind:id="'subcategoryImg#' + img.order" class="subcategoryDataImg" v-bind:src="img.url" v-bind:title="img.description"/>
+                                    <a v-bind:href="'/codex' + img.url" target="blank">
+                                        <img v-bind:id="'subcategoryImg#' + img.order" class="subcategoryDataImg" v-bind:src="'/codex' + img.url" v-bind:title="img.description"/>
                                     </a>
                                     <div class="subcategoryImgNumber">#{{img.order}}</div>
                                 </span>
@@ -78,6 +78,10 @@ export default {
         const getSelectedCategoryData = computed(() => { return store.getters['selectedCategoryData']})
         // store.dispatch('actionSetRecentlySearched', localStorageRecentlySearched)
         
+        onMounted(() => {
+            console.log("componentText Mounted")
+        })
+
         function subcategoryCollapse(id)
         {
             console.log("subcategoryCollapse: " + id)

@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import codexJSON from "../assets/codex.json";
 import {useStore} from 'vuex'
 import {ref, reactive, computed, onUpdated, onMounted} from 'vue'
 import router from '../router'
 import { useRouter, useRoute } from 'vue-router' //instead of this.$route
+// import codexJSON from "@/codex.json";
 
 export default {
   setup() {
@@ -27,6 +27,11 @@ export default {
     const store = useStore() //same as this.$store
     // const getSelectedCategoryData = computed(() => { return store.getters['selectedCategoryData']})
     
+    var codexJSON = require('/public/codex.json');
+
+    onMounted(() => {
+      console.log("componentSidebar Mounted")
+    })
 
     function selectCategory(category)
     {
