@@ -1,6 +1,26 @@
 [
 	{
 		"order": "1",
+		"title" : "·",
+		"about" : "",
+		"data" : [
+			{"subcategory": "Unsorted", "type": "link", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Redwood.js", "value": "https://redwoodjs.com", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Vite.js", "value": "https://vitejs.dev", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Solid.js", "value": "https://www.solidjs.com", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Jest.js", "value": "https://jestjs.io", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Storybook.js", "value": "https://storybook.js.org", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Inertia.js", "value": "https://inertiajs.com", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Adonis.js", "value": "https://adonisjs.com", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Nest.js", "value": "https://nestjs.com", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Apline.js", "value": "https://alpinejs.dev/", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Prisma", "value": "https://www.prisma.io", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Tauri", "value": "https://tauri.app", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Capactior", "value": "https://capacitorjs.com", "images": "", "comment": "", "hidden": "false"}	
+		]
+	},
+	{
+		"order": "1",
 		"title" : "APIs",
 		"about" : "Application Programming Interfaces",
 		"data" : [
@@ -73,6 +93,7 @@
 				{"subcategory": "D", "type": "text", "name": "", "value": "Debug = Find out why the App is not working as intended", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "D", "type": "text", "name": "", "value": "Desktop = Standard/Traditional PC (Not a smartphone, tablet or any other smart device)", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "D", "type": "text", "name": "", "value": "Data Type = The variable type (Int, String, Boolean)", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "D", "type": "text", "name": "", "value": "Div = Divider", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "E", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "E", "type": "text", "name": "", "value": "Encryption = Make text unreadable/cryptic for security reasons", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "E", "type": "text", "name": "", "value": "E-commerce = Selling of goods or services using the internet", "images": "", "comment": "", "hidden": "false"},
@@ -103,7 +124,7 @@
 				{"subcategory": "M", "type": "text", "name": "", "value": "Microservices = Many small Applications working as one", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "M", "type": "text", "name": "", "value": "Mobile = Smartphone", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "N", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "N", "type": "text", "name": "", "value": "Native = Technologies natural to the environment (environment = OS)", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "N", "type": "text", "name": "", "value": "Native = Technologies natural to the environment (environment = OS)", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "O", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "O", "type": "text", "name": "", "value": "Open Source = The code (source code) of the App is available for everyone", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "O", "type": "text", "name": "", "value": "OS = Operating System (Windows, iOS, Android)", "images": "", "comment": "", "hidden": "false"},
@@ -121,10 +142,10 @@
 				{"subcategory": "P", "type": "text", "name": "", "value": "Params = Parameters (Usually refers to values taken by a function)", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Q", "type": "text", "name": "", "value": "QA = Quality Assurance", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "R", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "R", "type": "text", "name": "", "value": "Roadmap = A overview planning document", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "R", "type": "text", "name": "", "value": "RND = Research and Development (R&D)", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "R", "type": "text", "name": "", "value": "Refactor = Improve the code", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "R", "type": "text", "name": "", "value": "Rate Limit = Limit the number of requests someone can send", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "R", "type": "text", "name": "", "value": "Roadmap = A overview planning document", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "R", "type": "text", "name": "", "value": "RND = Research and Development (R&D)", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "R", "type": "text", "name": "", "value": "Refactor = Improve the code", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "R", "type": "text", "name": "", "value": "Rate Limit = Limit the number of requests someone can send", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "S", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "S", "type": "text", "name": "", "value": "Server = Hosting Machine/Serving Application", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "S", "type": "text", "name": "", "value": "Session = Login Session/Session Data", "images": "", "comment": "", "hidden": "false"},
@@ -135,7 +156,7 @@
 				{"subcategory": "S", "type": "text", "name": "", "value": "Scale = Increase the amount of users the App can handle", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "S", "type": "text", "name": "", "value": "State = The mode of something", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "T", "type": "text", "name": "", "value": "", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "T", "type": "text", "name": "", "value": "Token = Verification Token (Used as a password to gain access to something)", "images": "", "comment": "", "hidden": "false"},
+				{"subcategory": "T", "type": "text", "name": "", "value": "Token = Verification Token (Used as a password to gain access to something)", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "T", "type": "text", "name": "", "value": "Telemetry = Collection of technical data by the app (Usually refers to performance data)", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "T", "type": "text", "name": "", "value": "The Cloud = Someone else's computer", "images": "", "comment": "", "hidden": "false"},
 				{"subcategory": "T", "type": "text", "name": "", "value": "Transpiler = Converts one programming language to another", "images": "", "comment": "", "hidden": "false"},
@@ -499,7 +520,7 @@
 		"data" : [
 			{"subcategory": "YouTube Channels", "type": "link", "name": "Chris Hawkes", "value": "https://www.youtube.com/c/noobtoprofessional", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "Hussein Nasser", "value": "https://www.youtube.com/c/HusseinNasser-software-engineering", "images": "","comment": "", "hidden": "false"},
-			{"subcategory": "YouTube Channels", "type": "link", "name": "Fireship", "value": "https://www.youtube.com/c/AngularFirebase", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Fireship", "value": "https://www.youtube.com/c/Fireship", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "Traversy Media", "value": "https://www.youtube.com/user/TechGuyWeb", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "Coding Garden", "value": "https://www.youtube.com/channel/UCLNgu_OupwoeESgtab33CCw", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "TechLead", "value": "https://www.youtube.com/channel/UC4xKdmAXFh4ACyhpiQ_3qBw", "images": "","comment": "", "hidden": "false"},
@@ -531,6 +552,26 @@
 			{"subcategory": "14. Builder (Make code into an App/Program/Exe)", "type": "text", "name": "", "value": "", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "15. Exceptions", "type": "text", "name": "", "value": "", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "16. Memory", "type": "text", "name": "", "value": "", "images": "","comment": "", "hidden": "false"}
+		]
+	},
+	{
+		"order": "10",
+		"title" : "Testing",
+		"about" : "Testing Frameworks",
+		"data" : [
+			{"subcategory": "General", "type": "text", "name": "", "value": "", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "General", "type": "link", "name": "Mocha.js", "value": "https://mochajs.org/", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "General", "type": "link", "name": "Jest.js", "value": "https://jestjs.io/", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "General", "type": "link", "name": "Cypress", "value": "https://www.cypress.io/", "images": "","comment": "", "hidden": "false"}
+		]
+	},
+	{
+		"order": "9",
+		"title" : "Stats",
+		"about" : "Developer Related Statistics",
+		"data" : [
+			{"subcategory": "General", "type": "text", "name": "", "value": "", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "General", "type": "link", "name": "State of JavaScript", "value": "https://stateofjs.com", "images": "","comment": "", "hidden": "false"}
 		]
 	}
 ]
