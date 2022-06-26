@@ -528,7 +528,16 @@
 			{"subcategory": "YouTube Channels", "type": "link", "name": "Web Dev Simplified", "value": "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "QiroLab", "value": "https://www.youtube.com/c/QiroLab/videos", "images": "","comment": "", "hidden": "false"},
 			{"subcategory": "YouTube Channels", "type": "link", "name": "FreeCodeCamp", "value": "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ", "images": "","comment": "", "hidden": "false"},
-			{"subcategory": "YouTube Channels", "type": "link", "name": "Academind", "value": "https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w", "images": "","comment": "", "hidden": "false"}
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Academind", "value": "https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Aaron Jack", "value": "https://www.youtube.com/c/AaronJackFreemote", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Punit Chawla", "value": "https://www.youtube.com/c/PunitChawla", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Be A Better Dev", "value": "https://www.youtube.com/c/BeABetterDev", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Tushar Roy", "value": "https://www.youtube.com/user/tusharroy2525", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "InfoQ", "value": "https://www.youtube.com/nctv", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Code Karle", "value": "https://www.youtube.com/c/codeKarle", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Techno Tim Live", "value": "https://www.youtube.com/c/TechnoTimLive", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "Ben Eater", "value": "https://www.youtube.com/c/BenEater", "images": "","comment": "", "hidden": "false"},
+			{"subcategory": "YouTube Channels", "type": "link", "name": "CodeDamn", "value": "https://www.youtube.com/c/codedamn", "images": "","comment": "", "hidden": "false"}
 		]
 	},
 	{
