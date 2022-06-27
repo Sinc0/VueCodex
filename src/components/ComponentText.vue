@@ -200,6 +200,11 @@ export default {
 </script>
 
 <style>
+/*** scrollbar ***/
+#ComponentText::-webkit-scrollbar { height: 0px; width: 0px;}
+#categoryAbout::-webkit-scrollbar { height: 0px; width: 0px;}
+#subcategoryData::-webkit-scrollbar { height: 0px; width: 0px;}
+
 /*** elements ***/
 /*** ids ***/
 #ComponentText 
@@ -243,7 +248,7 @@ export default {
 .subcategoryTitle { width: 100%; font-size: 20px; user-select: none; text-align: left; border-top: 0px solid black;}
 .subcategoryData { width: 100%; margin: auto; text-align: left;}
 .subcategoryDataSection { width: 90%; margin: auto; margin-bottom: 40px; text-align: left; font-size: 20px; border: 0px solid white;}
-.link a { text-decoration: none;}
+.link a { text-decoration: none; color:rgb(8, 151, 247)}
 .link a:hover { color: white;}
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
 .subcategoryDataItem { opacity: 0.7;}

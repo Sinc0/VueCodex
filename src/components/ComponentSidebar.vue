@@ -80,6 +80,9 @@ export default {
 </script>
 
 <style scoped>
+/*** scrollbar ***/
+#ComponentSidebar::-webkit-scrollbar { height: 0px; width: 0px;}
+
 /*** elements ***/
 
 /*** ids ***/
