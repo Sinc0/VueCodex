@@ -1,9 +1,13 @@
 <template>
   <div id="ComponentSidebar">
+    <!-- route handling -->
+    <span style="display: none;" v-if="getSelectedCategoryData">selected: {{getSelectedCategoryData.title.toLowerCase()}}</span>
+
+
+    <!-- categories -->
     <div v-for="category in codexJSON.slice().sort((a, b) => {return a.order - b.order})" v-bind:key="category.nr">
-      <!-- categories -->
-      <div id="categoryTitle" v-on:click="selectCategory(category)">
-        <span class="categoryTitle">{{category.title}}</span>
+      <div id="categoryTitle" v-on:click="selectCategory(category.title)">
+        <span v-bind:id="'categoryTitle#' + category.title.toLowerCase()" class="categoryTitle">{{category.title}}</span>
         <span class="categorySubcategoriesCount"></span>
       </div>
       
@@ -25,31 +29,62 @@ export default {
   setup() {
     //vuex
     const store = useStore() //same as this.$store
-    // const getSelectedCategoryData = computed(() => { return store.getters['selectedCategoryData']})
+    const getSelectedCategoryData = computed(() => { return store.getters['selectedCategoryData']})
     
     var codexJSON = require('/public/codex.json');
 
     onMounted(() => {
       console.log("componentSidebar Mounted")
+
+      let currentRoute = router.currentRoute.value.fullPath.replace("/", "")
+
+      if(currentRoute == "") { currentRoute = "apis"}
+      
+      selectCategory(currentRoute)
+    })
+
+    onUpdated(() => {
+      console.log("componentSidebar Updated")
     })
 
     function selectCategory(category)
     {
-      console.log("selectCategory")
+      // console.log("selectCategory")
+      router.push({ path: '/' + category.toLowerCase() })
 
       let subcategoryData = document.getElementById("subcategoryData")
-      
-      //vuex
-      store.dispatch('actionSetSelectedCategoryData', category)  
+      let categoryTitle = document.getElementById("categoryTitle#" + category.toLowerCase())
+      let categoryTitles = document.getElementsByClassName("categoryTitle")
 
-      subcategoriesExpandAll()
+      for(let c in categoryTitles)
+      {
+        if(categoryTitles[c].style) {categoryTitles[c].style.opacity = "0.3"}
+      }
       
       if(subcategoryData) { subcategoryData.scroll(0, 0) }
+      if(categoryTitle) 
+      { 
+        categoryTitle.style.opacity = "1"
+        categoryTitle.scrollIntoView()
+      }
+
+      for(let c in codexJSON)
+      {
+        if(category.toLowerCase() == codexJSON[c].title.toLowerCase())
+        {
+          let selectedCategory = codexJSON[c]
+          
+          //vuex
+          store.dispatch('actionSetSelectedCategoryData', selectedCategory) 
+        }
+      }
+
+      subcategoriesExpandAll()
     }
 
     function subcategoriesExpandAll()
     {
-        console.log("subcategoriesExpandAll")
+        // console.log("subcategoriesExpandAll")
         
         //elements
         let subcategoryDataSections = document.getElementsByClassName("subcategoryDataSection")
@@ -69,6 +104,9 @@ export default {
     }
     
     return {
+      //vuex
+      getSelectedCategoryData,
+
       //variables
       codexJSON,
 
@@ -105,4 +143,23 @@ export default {
 
 /*** classes ***/
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
+.categoryTitle:active   { color: lightgray;}
+
+/*** mobile ***/
+@media screen and (max-width: 1000px) {
+  #ComponentSidebar {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    overflow-y: scroll;
+    border-top: 0px solid white;
+    border-bottom: 2px solid white;
+    border-right: 0px solid white;
+    border-left: 0px solid white;
+    background-color: black;
+  }
+
+  #categoryTitle { text-align: left;}
+}
 </style>

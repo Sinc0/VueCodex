@@ -32,8 +32,8 @@
                         <div v-if="data.value != ''">
                             <!-- data type link -->
                             <span class="link" v-if="data.type == 'link'">
-                                <span v-if="data.name"> · <a v-bind:href="data.value" target="blank">{{data.name}}</a></span>
-                                <span v-else> · <a v-bind:href="data.value" target="blank">{{data.value}}</a></span>
+                                <span v-if="data.name"> · <a v-bind:href="data.value">{{data.name}}</a></span>
+                                <span v-else> · <a v-bind:href="data.value">{{data.value}}</a></span>
                             </span>
 
                             <!-- data type text -->
@@ -51,7 +51,7 @@
                             <!-- data images -->
                             <div class="subcategoryImgGallery" v-if="data.images">
                                 <span v-for="img in data.images.slice().sort((a, b) => {return a.order > b.order})" v-bind:key="img.nr">
-                                    <a v-bind:href="'/codex' + img.url" target="blank">
+                                    <a v-bind:href="img.url">
                                         <img v-bind:id="'subcategoryImg#' + img.order" class="subcategoryDataImg" v-bind:src="'/codex' + img.url" v-bind:title="img.description"/>
                                     </a>
                                     <div class="subcategoryImgNumber">#{{img.order}}</div>
@@ -80,6 +80,10 @@ export default {
         
         onMounted(() => {
             console.log("componentText Mounted")
+        })
+
+        onUpdated(() => {
+            console.log("componentText Updated")
         })
 
         function subcategoryCollapse(id)
@@ -114,10 +118,7 @@ export default {
             //reset subcategory sections
             for(let subcategory in subcategoryDataSections)
             {
-                if(subcategoryDataSections[subcategory].style != null)
-                {
-                    subcategoryDataSections[subcategory].style.marginBottom = "0px"
-                }
+                if(subcategoryDataSections[subcategory].style != null) { subcategoryDataSections[subcategory].style.marginBottom = "0px" }
             }
 
             //undisplay subcategory data
@@ -204,6 +205,7 @@ export default {
 #ComponentText::-webkit-scrollbar { height: 0px; width: 0px;}
 #categoryAbout::-webkit-scrollbar { height: 0px; width: 0px;}
 #subcategoryData::-webkit-scrollbar { height: 0px; width: 0px;}
+.subcategoryDataItem::-webkit-scrollbar { height: 0px; width: 0px;}
 
 /*** elements ***/
 /*** ids ***/
@@ -224,7 +226,7 @@ export default {
     /* border-bottom: 2px solid black; */
     background-color: black;
 }
-#selectedCategoryTitle { margin: auto; padding: 0px 0px 16px 0px; text-align: center; font-weight: bold; font-size: 24px;}
+#selectedCategoryTitle { margin: auto; padding: 6px 0px 6px 0px; text-align: center; font-weight: bold; font-size: 24px;}
 #subcategoryInfoMenu { margin: 0px 0px 0px 0px; padding: 0px;}
 #subcategoryData { position: relative; max-height: 89vh; margin: 160px 0px 0px 0px; padding: 0px; overflow-y: scroll; z-index: 0; border-bottom: 0px solid white;}
 #categoryTopInfo 
@@ -240,19 +242,40 @@ export default {
     /* border-bottom: 1px solid black;  */
     background-color: black;
 }
-#categoryAbout { height: auto; width: 100%; max-width: 440px; margin: auto; word-break: none; white-space: nowrap; overflow-x: scroll;}
+#categoryAbout 
+{ 
+    height: auto; 
+    width: 100%; 
+    max-width: 440px; 
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+    word-break: none; 
+    white-space: nowrap; 
+    overflow-x: scroll; 
+    font-weight: bold;
+    font-size: 19px;
+    opacity: 0.6;
+}
 #searchBarInput { width: 100%; font-size: 22px; color: lightgray; outline: none; border: 0px solid white; background-color: black;}
-#searchBar { width: 90%; margin: auto; margin-bottom: 24px; text-align: left; border-bottom: 2px solid white;}
+#searchBar { width: 90%; margin: auto; margin-bottom: 20px; text-align: left; border-bottom: 2px solid rgba(128, 128, 128, 0.6);}
 
 /*** classes ***/
 .subcategoryTitle { width: 100%; font-size: 20px; user-select: none; text-align: left; border-top: 0px solid black;}
 .subcategoryData { width: 100%; margin: auto; text-align: left;}
 .subcategoryDataSection { width: 90%; margin: auto; margin-bottom: 40px; text-align: left; font-size: 20px; border: 0px solid white;}
-.link a { text-decoration: none; color:rgb(8, 151, 247)}
-.link a:hover { color: white;}
+.link a { text-decoration: none; color:rgb(8, 151, 247);}
+.link a:active { color: white;}
 .categorySubcategoriesCount { opacity: 0.4; user-select: none;}
-.subcategoryDataItem { opacity: 0.7;}
-.subcategoryDataImg { display: inline-block; max-height: 200px; min-height: 200px; margin: 0px 20px 10px 0px; user-select: none; border: 1px solid rgba(255, 255, 255, 0.3);}
+.subcategoryDataItem { width: 100%; overflow-x: scroll; white-space: nowrap; opacity: 0.7; margin: 0px 0px 10px 0px;}
+.subcategoryDataImg 
+{ 
+    display: inline-block; 
+    max-height: 200px; 
+    min-height: 200px; 
+    margin: 0px 20px 10px 0px; 
+    user-select: none; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 .subcategoryImgGallery 
 { 
     display: flex; 
@@ -265,4 +288,20 @@ export default {
     border-bottom: 1px solid white;
 }
 .subcategoryImgNumber { margin: 0px 0px 10px 0px;}
+
+/*** mobile ***/
+@media screen and (max-width: 1000px) {
+    #ComponentText { height: 87vh; width: 90vw; padding-bottom: 20px;}
+    #selectedCategoryTitle { width: 90vw; text-align: center;}
+    #searchBar { width: 80vw; padding-top: 10px; border-bottom: 0px solid white;}
+    #categoryAbout { width: 80vw;}
+    #categoryTopInfo { width: 90vw; max-width: 90vw; margin: 0px; padding: 0x;}
+    #searchBarInput { text-align: center; border-bottom: 2px solid rgba(128, 128, 128, 0.4);}
+    #selectedCategoryTitle { padding: 0px 0px 3px 0px;}
+    #subcategoryData { max-height: 100vh; padding-bottom: 60px;}
+
+    .link { width: 100%; overflow-x: scroll; white-space: nowrap; display: flex;}
+
+    .subcategoryDataItem {width: 100%; overflow-x: scroll; white-space: nowrap;}
+}
 </style>

@@ -13,15 +13,15 @@
 			{"subcategory": "Unsorted", "type": "link", "name": "Inertia.js", "value": "https://inertiajs.com", "images": "", "comment": "", "hidden": "false"},	
 			{"subcategory": "Unsorted", "type": "link", "name": "Adonis.js", "value": "https://adonisjs.com", "images": "", "comment": "", "hidden": "false"},	
 			{"subcategory": "Unsorted", "type": "link", "name": "Nest.js", "value": "https://nestjs.com", "images": "", "comment": "", "hidden": "false"},	
-			{"subcategory": "Unsorted", "type": "link", "name": "Apline.js", "value": "https://alpinejs.dev/", "images": "", "comment": "", "hidden": "false"},	
+			{"subcategory": "Unsorted", "type": "link", "name": "Apline.js", "value": "https://alpinejs.dev", "images": "", "comment": "", "hidden": "false"},	
 			{"subcategory": "Unsorted", "type": "link", "name": "Prisma", "value": "https://www.prisma.io", "images": "", "comment": "", "hidden": "false"},	
 			{"subcategory": "Unsorted", "type": "link", "name": "Tauri", "value": "https://tauri.app", "images": "", "comment": "", "hidden": "false"},
 			{"subcategory": "Unsorted", "type": "link", "name": "Capactior", "value": "https://capacitorjs.com", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Realm.io", "value": "https://realm.io/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Supabase", "value": "https://supabase.com/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Appwrite.io", "value": "https://appwrite.io/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Fresh.js (deno)", "value": "https://usefresh.org/", "images": "", "comment": "", "hidden": "false"},
-			{"subcategory": "Unsorted", "type": "link", "name": "Preact.js (lightweight)", "value": "", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Realm.io", "value": "https://realm.io", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Supabase", "value": "https://supabase.com", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Appwrite.io", "value": "https://appwrite.io", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Fresh.js (deno)", "value": "https://usefresh.org", "images": "", "comment": "", "hidden": "false"},
+			{"subcategory": "Unsorted", "type": "link", "name": "Preact.js (lightweight)", "value": "https://preactjs.com", "images": "", "comment": "", "hidden": "false"}
 		]
 	},
 	{
